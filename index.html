@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Application</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div id="quiz-home" class="container start-qz">
+        <div class="row bg-primary text-white text-center p-2">
+            <div class="col">
+                <h2>Welcome to Computer Science Quiz</h2>
+            </div>
+        </div>
+        <div class="row mt-3 justify-content-center">
+            <div class="col pl-5">
+                <h2>Instruction</h2>
+                <ul class="p-2" style="font-size: 20px;">
+                    <li>Total 20 questions</li>
+                    <li>Time 2 minutes</li>
+                    <li>Every question is 2 marks</li>
+                </ul>
+                <button type="button" class="btn btn-primary btn-lg" onclick="start()">Start Quiz</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- main quiz container start-->
+    <div id="qz-content" class="container pb-4 mt-3 mb-2">
+        <div class="row p-3 mb-2 text-center text-white">
+            <div class="col bg-primary">
+                <h2>Computer Science Quiz</h2>
+            </div>
+        </div>
+        <div class="row pl-4 mb-2">
+            <div class="col">
+                <h4>Question <span id="ques-count"></span> of <span>20</span></h4>
+            </div>
+            <div class="col text-right pr-5">
+                <h4> Time : <span id="timer">00 : 00</span></h4>
+            </div>
+        </div>
+
+        <!-- question div -->
+        <div class="row ques-div text-center mb-5 p-4 text-white">
+            <p id="question" class="pl-3"></p>
+        </div>
+
+        <!-- options work start -->
+        <div class="row justify-content-around text-center">
+            <div class="col-4 opt mb-3 p-3 " onclick="AddOptSelection(this)">
+                <p class="mt-2"></p>
+            </div>
+            <div class="col-4 opt mb-3 p-3 " onclick="AddOptSelection(this)">
+                <p class="mt-2"></p>
+            </div>
+        </div>
+        <div class="row justify-content-around text-center">
+            <div class="col-4 opt mb-3 p-3 " onclick="AddOptSelection(this)">
+                <p class="mt-2"></p>
+            </div>
+            <div class="col-4 opt mb-3 p-3 " onclick="AddOptSelection(this)">
+                <p class="mt-2"></p>
+            </div>
+        </div>
+        <!-- options work end -->
+
+        <div class="row text-center mt-3">
+            <div class="col">
+                <button type="button" id="nextbtn" class="btn btn-primary btn-lg pl-5 pr-5 pt-2 pb-2" disabled
+                    onclick="next()">Next</button>
+            </div>
+        </div>
+    </div>
+    <!-- main quiz container end-->
+
+    <!-- result  -->
+    <div id="result" class="container start-qz text-center" style="display: none;">
+        <div class="row mb-5">
+            <div class="col">
+                <h1>Quiz Result</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col pl-5 pr-5">
+                <table class="table table-bordered" style="font-weight: bold; font-size: 20px;">
+                    <tbody>
+                        <tr>
+                            <td>Total Questions</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>Correct Answer</td>
+                            <td id="correct-ans"></td>
+                        </tr>
+                        <tr>
+                            <td>Your Score</td>
+                            <td id="show-score"></td>
+                        </tr>
+                        <tr>
+                            <td>Percentage</td>
+                            <td id="percentage"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-primary btn-lg pl-4 pr-4 pt-2 pb-2 mt-4" onclick="window.location.reload()">Go To Home</button>
+    </div>
+
+
+
+    <script src="app.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
